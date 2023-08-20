@@ -1,0 +1,25 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import "custom-base.css";
+@import "custom-components.css";
+@import "custom-utilities.css";
+@import "swiper.css";
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+section {
+  @apply relative;
+}
+
+.icon {
+  font-variation-settings: "TIME" 1;
+  transition: font-variation-settings 0.3s ease;
+}
+
+.icon:hover {
+  font-variation-settings: "TIME" 100;
+}

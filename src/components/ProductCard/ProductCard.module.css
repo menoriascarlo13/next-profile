@@ -1,0 +1,56 @@
+.ProductCard {
+  @apply bg-gray-200 text-black h-full relative;
+}
+
+/* .ProductCard:hover {
+  .ImageHover > img {
+    &:first-child {
+      @apply hidden;
+    }
+
+    &:last-child,
+    &:only-child {
+      @apply block;
+    }
+  }
+} */
+
+.ImageHover > img:last-child {
+  @apply hidden;
+}
+
+.ImageHover > img:only-child,
+.ImageHover > img:first-child {
+  @apply block relative;
+}
+
+.Image {
+  @apply relative aspect-square;
+}
+
+.Image img {
+  @apply absolute w-full h-full;
+}
+
+.Info {
+  @apply flex flex-col gap-1 p-4;
+}
+
+.Name {
+  @apply font-medium text-lg;
+}
+
+.Color {
+  @apply border border-solid border-black rounded-full w-5 h-5;
+}
+
+.Label {
+  @apply flex absolute top-0 left-0 flex-col items-start gap-2 m-4 z-[1];
+}
+
+.Slider {
+  --swiper-pagination-bullet-width: theme("spacing[3]");
+  --swiper-pagination-bullet-height: theme("spacing[3]");
+
+  @apply block w-full;
+}

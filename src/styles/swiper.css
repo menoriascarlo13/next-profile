@@ -1,0 +1,29 @@
+:root {
+  --swiper-pagination-color: white;
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-width: 0.8rem;
+  --swiper-pagination-bullet-height: 0.75rem;
+  --swiper-theme-color: black;
+  --swiper-pagination-bullet-inactive-opacity: 0.6;
+  --swiper-navigation-color: black;
+}
+
+.swiper-pagination {
+  @apply flex justify-center items-center w-full;
+}
+
+.swiper-pagination-bullet {
+  @apply border-solid border border-black;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-size: 1rem;
+
+  @apply bg-white p-4 rounded-full;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  pointer-events: auto !important;
+}

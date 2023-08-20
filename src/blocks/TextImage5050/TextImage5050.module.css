@@ -1,0 +1,67 @@
+.Grid {
+  @apply flex flex-col md:flex-row;
+}
+
+.ImagePosition__Left > .Image {
+  order: 0;
+}
+
+.ImagePosition__Left > .Content {
+  order: 1;
+}
+
+.ImagePosition__Right > .Image {
+  order: 1;
+}
+
+.ImagePosition__Right > .Content {
+  order: 0;
+}
+
+.Image,
+.Content {
+  @apply flex flex-col w-full;
+}
+
+.Content {
+  @apply py-16 px-4 md:px-16 md:py-4;
+  @apply md:aspect-square md:max-w-[50%];
+}
+
+.Image {
+  @apply justify-center aspect-square;
+  @apply md:max-w-[50%];
+}
+
+.Media {
+  @apply h-auto w-full aspect-square;
+}
+/* 
+.Horizontal {
+  &__Center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &__Left {
+    align-items: flex-start;
+  }
+
+  &__Right {
+    align-items: flex-end;
+  }
+}
+
+.Vertical {
+  &__Top {
+    justify-content: flex-start;
+  }
+
+  &__Bottom {
+    justify-content: flex-end;
+  }
+
+  &__Center {
+    justify-content: center;
+  }
+} */

@@ -1,0 +1,165 @@
+.Nav {
+  @apply sticky top-0 flex justify-between bg-white px-4 py-0 items-center z-[4] w-full;
+}
+
+.NavMainMenu {
+  @apply cursor-pointer gap-4 md:flex;
+}
+
+.NavMainMenu > li {
+  padding: 1rem 0;
+
+  @apply py-2 md:py-4 md:px-0;
+}
+
+.NavMainMenu li {
+  &:hover > ul {
+    @apply flex flex-col;
+  }
+}
+
+.NavMainMenu.NavMainMenuMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.Link {
+  @apply text-black;
+}
+
+.NavRight {
+  @apply flex px-0 py-4;
+}
+
+.Category {
+  @apply flex relative flex-col gap-4;
+}
+
+.Category ul {
+  @apply hidden;
+}
+
+.Quantity {
+  top: -8px;
+  right: -12px;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.7rem;
+
+  @apply flex absolute justify-center items-center rounded-full bg-black text-white text-center;
+}
+
+.Title {
+  margin-bottom: 1rem;
+}
+
+.Cart {
+  @apply bg-transparent flex relative cursor-pointer border-none w-[20px] h-[20px];
+}
+
+.ModalOverlay {
+  @apply bg-black opacity-50 w-full h-full z-[2] top-0 left-0 fixed;
+}
+
+.CartAnimation {
+  z-index: 1;
+
+  /* &-entered-done {
+    display: inline;
+  }
+
+  &__Enter,
+  &__EnterActive,
+  &__EnterDone,
+  &__Exit,
+  &__ExitActive,
+  &__ExitDone {
+    position: absolute;
+    top: 0;
+    transition: right 0.5s ease;
+  }
+
+  &__Enter,
+  &__ExitDone,
+  &__Appear {
+    right: -100%;
+  }
+
+  &__EnterActive,
+  &__ExitDone {
+    right: -50%;
+  }
+
+  &__EnterDone,
+  &__Exit {
+    right: 0%;
+  } */
+}
+
+.Hamburger {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 32px;
+
+  @apply flex md:hidden;
+
+  /* 
+  span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #0e2431;
+
+    &:first-child {
+      transform-origin: 0% 0%;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &:nth-child(even) {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &:last-child {
+      transform-origin: 0% 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+
+  &.active {
+    span {
+      &:nth-child(even) {
+        transform: scaleY(0);
+      }
+
+      &:first-child {
+        transform: rotate(45deg);
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  } */
+}
+
+.Hamburger span {
+  line-height: 80%;
+  height: 32px;
+}
+
+.HamburgerWrapper {
+  position: relative;
+}
+
+.NavModal {
+  @apply fixed h-full left-0 w-1/2 flex items-start justify-center p-[20px] bg-white z-[2];
+}

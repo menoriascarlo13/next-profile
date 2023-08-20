@@ -1,0 +1,48 @@
+@tailwind components;
+
+@layer components {
+  .container {
+    @apply mx-1;
+  }
+
+  .title {
+    @apply text-4xl md:text-7xl leading-tight;
+  }
+
+  .button,
+  .link {
+    @apply py-3 rounded-sm border-solid duration-500 tracking-wider;
+  }
+
+  .button {
+    @apply px-3;
+  }
+
+  .button.primary,
+  .button.secondary {
+    @apply border-solid border-x-[1px] border-y-[1px];
+  }
+
+  .button.primary {
+    @apply border-black;
+  }
+
+  .button.primary:hover,
+  .button.active {
+    @apply bg-black text-white border-black;
+  }
+
+  .button.secondary,
+  .button.checkout {
+    @apply bg-black text-white;
+  }
+
+  .button.secondary:hover,
+  .button.checkout:hover {
+    @apply bg-white text-black;
+  }
+
+  .button.checkout {
+    @apply py-3 text-lg tracking-widest;
+  }
+}

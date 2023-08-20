@@ -1,0 +1,64 @@
+@tailwind utilities;
+/* @import "tailwindcss/utilities"; */
+
+@layer utilities {
+  .margin-0-auto {
+    @apply my-0 mx-auto;
+  }
+
+  .container-auto {
+    @apply px-8 mx-auto;
+    @apply md:margin-0-auto md:px-0;
+  }
+
+  .sale,
+  .discount {
+    color: red;
+  }
+
+  .price-before {
+    color: rgba(#2e2e2e, 0.7);
+
+    @apply line-through;
+  }
+
+  .swiper-slide-image-w-auto .swiper-slide {
+    @apply w-[200px] h-[200px];
+  }
+
+  .button-cart {
+    @apply px-4 min-w-[150px]  flex items-center justify-center gap-3;
+  }
+
+  .checkout {
+    @apply border hover:border-solid hover:border-x-black hover:border-y-black;
+  }
+
+  @keyframes icon-animation-close {
+    0% {
+      font-variation-settings: "TIME" 1;
+    }
+    100% {
+      font-variation-settings: "TIME" 100;
+    }
+  }
+
+  @keyframes icon-animation-open {
+    0% {
+      font-variation-settings: "TIME" 100;
+    }
+    100% {
+      font-variation-settings: "TIME" 1;
+    }
+  }
+
+  .active {
+    font-variation-settings: "TIME" 100;
+    animation: icon-animation-close 0.5s ease-in-out;
+  }
+
+  .inactive {
+    font-variation-settings: "TIME" 1;
+    animation: icon-animation-open 0.5s ease-in-out;
+  }
+}

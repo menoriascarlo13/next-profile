@@ -1,0 +1,15 @@
+.Grid {
+  @apply grid grid-cols-1 gap-4;
+
+  @apply md:grid-cols-2;
+
+  @apply lg:grid-cols-3;
+}
+
+.Grid a {
+  @apply overflow-hidden;
+}
+
+.Container {
+  @apply container mx-auto;
+}

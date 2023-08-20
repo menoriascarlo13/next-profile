@@ -1,0 +1,11 @@
+.Hero {
+  @apply relative h-full w-full overflow-hidden;
+}
+
+.Image {
+  @apply object-cover w-full h-full absolute;
+}
+
+.Image__Active {
+  @apply block;
+}

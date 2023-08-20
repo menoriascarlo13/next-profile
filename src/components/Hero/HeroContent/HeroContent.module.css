@@ -1,0 +1,3 @@
+.Content {
+  @apply flex absolute top-0 left-0 flex-col z-[1] p-8 w-full h-full;
+}

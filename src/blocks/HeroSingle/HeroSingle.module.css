@@ -1,0 +1,7 @@
+.Section {
+  @apply my-0 mx-auto p-0 aspect-square max-w-full lg:aspect-video;
+}
+
+.Wrapper {
+  @apply absolute w-full h-full;
+}

@@ -1,0 +1,3 @@
+.Headline {
+  @apply min-h-[10vh] my-[2rem] mx-auto md:my-[4rem] flex items-center md:min-h-0;
+}

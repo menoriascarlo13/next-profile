@@ -1,0 +1,15 @@
+.Links {
+  @apply underline underline-offset-8 tracking-widest transition-all duration-500;
+}
+
+.Links:hover {
+  @apply opacity-50;
+}
+
+.primary:hover {
+  @apply bg-transparent text-white;
+}
+
+.secondary:hover {
+  @apply bg-white text-black;
+}

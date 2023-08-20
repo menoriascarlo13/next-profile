@@ -1,0 +1,15 @@
+export type ImageTypePosition =
+  | 'left'
+  | 'right'
+  | 'center'
+  | 'top'
+  | 'bottom'
+  | 'left center'
+  | 'left top'
+  | 'left bottom'
+  | 'right center'
+  | 'right top'
+  | 'right bottom'
+  | 'center center'
+  | 'center top'
+  | 'center bottom';

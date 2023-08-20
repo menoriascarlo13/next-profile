@@ -1,0 +1,13 @@
+@import "../../styles/variable.css";
+
+.Section {
+  @apply p-0 max-w-none;
+}
+
+.Wrapper {
+  @apply flex flex-col md:flex-row;
+}
+
+.Image {
+  @apply aspect-square;
+}

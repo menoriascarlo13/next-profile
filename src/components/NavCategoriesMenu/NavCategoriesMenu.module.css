@@ -1,0 +1,11 @@
+.Item {
+  @apply flex absolute top-full flex-col gap-2 text-black bg-white capitalize;
+}
+
+.SubItem {
+  @apply py-0 px-4;
+}
+
+.SubItem:last-child {
+  @apply pb-4;
+}

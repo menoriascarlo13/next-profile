@@ -1,0 +1,7 @@
+.Breadcrumbs {
+  @apply flex flex-wrap gap-2;
+}
+
+.Breadcrumbs a:hover {
+  @apply opacity-80 underline;
+}

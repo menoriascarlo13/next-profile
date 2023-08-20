@@ -1,0 +1,103 @@
+.SelectedProduct {
+  @apply gap-12 md:grid md:grid-cols-12;
+}
+
+.SelectedProduct figure {
+  @apply relative aspect-square w-full;
+}
+
+.SelectedProduct figure img {
+  @apply w-full h-auto;
+}
+
+.Image {
+  @apply grid leading-none col-span-7;
+}
+
+.Carousel {
+  @apply w-full;
+}
+
+.ProductInfo {
+  @apply flex flex-col items-start gap-4 md:gap-6;
+}
+
+.PriceInfo {
+  @apply flex gap-4;
+}
+
+.Sale {
+  color: #ff5c5c;
+}
+
+.Strikethrough {
+  @apply line-through;
+}
+
+.DiscountPercent {
+  @apply absolute font-bold italic text-base py-1 px-4 text-red-800 bg-white top-4 right-4;
+}
+
+.Color,
+.Sizes {
+  @apply flex gap-2;
+}
+
+.Sizes {
+  @apply flex-row;
+}
+
+.ColorItem {
+  @apply block rounded-full border-solid border border-white w-[20px] h-[20px];
+}
+
+.Title {
+  @apply font-bold;
+}
+
+.SizeButton {
+  @apply border-black;
+}
+
+.SizeButton__Active,
+.SizeButton:hover {
+  @apply bg-black text-white border-black;
+}
+
+.Required {
+  color: #f37070;
+
+  @apply mt-1 text-sm;
+}
+
+.BackButton {
+  @apply flex align-middle text-base text-black;
+}
+
+.BackButton hover {
+  opacity: 0.8;
+}
+
+.Container {
+  @apply container mx-auto my-6;
+}
+
+.Form {
+  @apply p-5 md:p-0 md:pr-10 col-span-5;
+}
+
+.Information {
+  @apply flex gap-4 items-center;
+}
+
+.ColorItem {
+  @apply border-black;
+}
+
+.Thumbnail {
+  @apply block w-full overflow-hidden;
+}
+
+.Carousel_Thumb {
+  @apply block;
+}
