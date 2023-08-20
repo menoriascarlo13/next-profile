@@ -21,11 +21,11 @@ const Headline = ({ blok, children }: HeadlinePropsType) => {
     return (
       <section className={clsx(styles.Headline, TextAlignPositionOptions[textPosition])}>
         <div className='container container-auto'>
-          {blok?.content?.[0]?.title && <h1 className='title'>{blok?.content?.[0]?.title}</h1>}
+          {blok?.title && <h1 className='title'>{blok?.title}</h1>}
 
-          {blok?.content?.[0]?.subtitle && <h4>{blok?.content?.[0]?.subtitle}</h4>}
+          {blok?.subtitle && <h4>{blok?.subtitle}</h4>}
 
-          {blok?.content?.[0]?.paragraph && <p>{blok?.content?.[0]?.paragraph}</p>}
+          {blok?.paragraph && <p>{blok?.paragraph}</p>}
           {children}
         </div>
       </section>

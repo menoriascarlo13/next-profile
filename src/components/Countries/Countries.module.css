@@ -1,7 +1,0 @@
-.Country {
-  @apply border-none bg-transparent py-0 px-4 overflow-y-auto text-black text-base;
-}
-
-.Country option {
-  @apply appearance-none  py-0 px-4 overflow-y-auto text-right;
-}

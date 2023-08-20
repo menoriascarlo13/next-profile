@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply font-body pb-[10vh] min-h-screen;
+    @apply font-body pb-[10vh] min-h-screen text-white bg-[#121120];
   }
 
   h1 {

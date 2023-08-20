@@ -1,56 +1,39 @@
 /* eslint-disable no-console */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { apiPlugin, storyblokInit } from '@storyblok/react';
-import cookie from 'cookie';
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 
 import components from '@/configs/components-config';
 import Pages from '@/page/Pages';
 import pageSettings from '@/page/pageSettings';
 import Consoler from '@/services/consoler';
-import isObject from '@/tools/isObject';
 
 // Initialize Storyblok
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN, // add your access token
+  apiOptions: {
+    region: 'us'
+  },
   components,
   use: [apiPlugin] // provide api client that the storyblok using
 });
 
-export const getServerSideProps: GetServerSideProps = async ({ query, req, res }) => {
+export const getStaticPaths = async () => ({
+  fallback: 'blocking',
+  paths: []
+});
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    console.log('get server request');
+    console.log('get static request');
 
-    res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
-    const cookies = cookie.parse(req.headers.cookie || '');
-
-    const hasCookies: boolean = Object.keys(cookies as Object).length !== 0;
-
-    const { header, key, prop, story } = await pageSettings({
-      cookies,
-      query
+    const { key, story } = await pageSettings({
+      query: params
     });
 
-    if (!hasCookies) {
-      const cookieData: any = prop;
-
-      res.setHeader(
-        'set-cookie',
-        Object.keys(cookieData).map((propkey) => {
-          const cookieKeyValue =
-            isObject(cookieData?.[propkey] as string) || Array.isArray(cookieData?.[propkey] as string)
-              ? JSON.stringify(cookieData[propkey])
-              : cookieData[propkey];
-
-          return cookie.serialize(propkey, propkey !== 'products' ? String(cookieKeyValue) : '', { path: '/' });
-        })
-      );
-    }
-
     const props = {
-      header,
-      prop,
-      query,
+      // header,
+      params,
       story,
       storyKey: key
     };

@@ -38,11 +38,9 @@ export type StoryblokDataHaveReturnType = {
 export type StoryblokDataReturnType = StoryblokDataHaveReturnType;
 
 export type StoryblokContentType = {
-  content?: {
-    paragraph?: string;
-    subtitle?: string;
-    title?: string;
-  }[];
+  paragraph?: string;
+  subtitle?: string;
+  title?: string;
 };
 
 export type StoryblokImageType = {
