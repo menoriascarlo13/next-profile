@@ -6,10 +6,8 @@ import Carousel from '@/components/Carousel/Carousel';
 import Image from '@/components/Image/Image';
 
 const Showcase = ({ blok }: any) => {
-  console.log(blok);
-
   return (
-    <section {...storyblokEditable(blok)}>
+    <section {...storyblokEditable(blok)} className='py-28'>
       <div className='text-center'>
         <p className='text-[20px]'>{blok.title}</p>
         <p className='text-[18px] opacity-30'>{blok.description}</p>
