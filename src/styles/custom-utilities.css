@@ -61,4 +61,14 @@
     font-variation-settings: "TIME" 1;
     animation: icon-animation-open 0.5s ease-in-out;
   }
+
+  .ease-linear-swiper > .swiper-wrapper {
+    @apply items-center ease-linear will-change-transform;
+
+    transform-style: preserve-3d;
+  }
+
+  .swiper-slide-w-auto .swiper-slide {
+    @apply block aspect-square flex-shrink-0 max-w-[100px];
+  }
 }
