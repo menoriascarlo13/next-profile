@@ -1,10 +1,6 @@
 export type CardPropsType = {
+  description: string;
   image: string[];
-  name: string;
-  price: {
-    currentPrice?: string;
-    discountPercent?: number;
-    priceBeforeDiscount?: string;
-    showAsOnSale?: boolean;
-  };
+  logo: string[];
+  title: string;
 };

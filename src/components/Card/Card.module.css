@@ -1,34 +1,7 @@
 .Card {
-  @apply relative bg-white text-black;
+  @apply relative bg-[#828192]/[0.2] text-black p-4 rounded-lg;
 }
 
 .Card img {
   @apply absolute w-full h-full;
-}
-
-.Card figure {
-  @apply relative aspect-1/1;
-}
-
-.Card .Info {
-  @apply p-4;
-}
-
-.Price {
-  @apply flex gap-2;
-}
-
-.Price__LineThrough {
-  @apply line-through;
-}
-
-.Sale,
-.DiscountPercentage {
-  @apply text-red-600;
-}
-
-.DiscountPercentage {
-  border-radius: var(--border-radius);
-
-  @apply absolute top-0 right-0 m-4 bg-white py-1 px-4;
 }
