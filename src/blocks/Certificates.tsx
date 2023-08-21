@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Card from '@/components/Card/Card';
 
 const Certificates = ({ blok }: any) => (
-  <section {...storyblokEditable(blok)} className='px-20 mt-10'>
+  <section {...storyblokEditable(blok)} className='px-5 lg:px-20 mt-10'>
     <div className='grid  md:grid-cols-2 lg:grid-cols-4'>
       {blok.certificate.map(({ _uid, description, image, logo, title, url }: any) =>
         url ? (
