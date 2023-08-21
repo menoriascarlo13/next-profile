@@ -5,6 +5,7 @@
 import Certificates from '@/blocks/Certificates';
 import Experience from '@/blocks/Experience';
 import Showcase from '@/blocks/Showcase';
+import Spacer from '@/blocks/Spacer';
 import Headline from '@/components/Headline/Headline';
 import Hero from '@/components/Hero/Hero';
 import Page from '@/components/Page/Page';
@@ -17,7 +18,8 @@ const components = {
   // hero5050: Hero5050,
   // heroSingle: HeroSingle,
   page: Page,
-  showcase: Showcase
+  showcase: Showcase,
+  spacer: Spacer
   // stylesheet: Stylesheet`
   // textImage5050: TextImage5050
 };
