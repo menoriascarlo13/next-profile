@@ -31,15 +31,7 @@ const Contact = ({ blok }: any) => {
           </div>
           <div>
             {blok.button.map(({ _uid, label, url }: any) => (
-              <Link
-                key={_uid}
-                className='py-[13px] px-[24px] rounded-lg transition-opacity hover:opacity-80 text-center flex md:text-left md:block'
-                href={url.cached_url}
-                style={{
-                  background: 'linear-gradient(278deg, rgba(154,133,220,1) 0%, rgba(109,75,193,1) 50%)'
-                }}
-                target='_blank'
-              >
+              <Link key={_uid} className='button tertiary' href={`mailto:${url.cached_url}`} target='_blank'>
                 {label}
               </Link>
             ))}

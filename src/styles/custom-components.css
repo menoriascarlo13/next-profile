@@ -45,4 +45,10 @@
   .button.checkout {
     @apply py-3 text-lg tracking-widest;
   }
+
+  .button.tertiary {
+    background: linear-gradient(278deg, rgba(154, 133, 220, 1) 0%, rgba(109, 75, 193, 1) 50%);
+
+    @apply py-[13px] px-[24px] rounded-lg transition-opacity hover:opacity-80 text-center flex md:text-left md:block;
+  }
 }

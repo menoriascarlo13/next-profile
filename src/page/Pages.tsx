@@ -21,6 +21,9 @@ const Pages = (props: PagePropType) => {
       });
     }
 
+    const date = new Date();
+    const year = date.getFullYear();
+
     // const HeaderMemo = useMemo(() => <Header {...props} header={header} />, [header, props]);
 
     return (
@@ -31,6 +34,7 @@ const Pages = (props: PagePropType) => {
         </Head>
         {/* {HeaderMemo} */}
         {haveStoryblokComponents && <StoryblokComponent blok={storyBlok?.content} />}
+        <div className='mt-20 mx-auto text-center px-5 lg:px-20'>Copyright @{year}</div>
       </>
     );
   } catch (err) {

@@ -7,8 +7,8 @@ import Image from '@/components/Image/Image';
 
 const Showcase = ({ blok }: any) => {
   return (
-    <section {...storyblokEditable(blok)} className='py-28'>
-      <div className='text-center'>
+    <section {...storyblokEditable(blok)} className='py-5 md:py-28'>
+      <div className='text-center px-5 lg:px-20'>
         {blok?.title && <p className='text-[20px]'>{blok.title}</p>}
         {blok?.description && <p className='text-[18px] opacity-30'>{blok.description}</p>}
       </div>

@@ -24,8 +24,7 @@ export const getStaticProps = async ({ params }: any) => {
   const res = await fetch('https://api.github.com/repos/vercel/next.js');
   const repo = await res.json();
 
-  const { header, key, prop, story } = await pageSettings({
-    cookies: '',
+  const { header, key, story } = await pageSettings({
     query: params
   });
 
@@ -33,7 +32,7 @@ export const getStaticProps = async ({ params }: any) => {
 
   try {
     return {
-      props: { header, key, prop, repo, story }
+      props: { header, key, repo, story }
     };
   } catch (error) {
     console.log('Error at getStatic slug: ', error);

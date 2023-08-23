@@ -1,6 +1,7 @@
 export type CardPropsType = {
+  className: string[] | string;
   description: string;
-  image: string[];
-  logo: string[];
+  image: any;
+  logo: any;
   title: string;
 };

@@ -1,11 +1,13 @@
+import clsx from 'clsx';
+
 import { CardPropsType } from '@/types/CardType';
 
 import Image from '../Image/Image';
 import styles from './Card.module.css';
 
-const Card = ({ description, image, logo, title }: CardPropsType) => {
+const Card = ({ className, description, image, logo, title }: CardPropsType) => {
   return (
-    <div className={styles.Card}>
+    <div className={clsx(styles.Card, className)}>
       <figure className='relative aspect-[398/299]'>
         {image ? (
           <Image alt={image?.alt} height={500} src={image?.filename} width={500} />
@@ -14,10 +16,10 @@ const Card = ({ description, image, logo, title }: CardPropsType) => {
         )}
       </figure>
 
-      <div className='flex mt-5 gap-2'>
-        {image && (
-          <div className='relative w-[40px] h-[40px]'>
-            <Image alt={logo?.alt} height={40} src={logo?.filename} width={40} />
+      <div className='flex mt-5 gap-4'>
+        {logo && (
+          <div className='relative w-[40px] h-[40px] '>
+            <Image alt={logo?.alt} className='object-contain' height={40} src={logo?.filename} width={40} />
           </div>
         )}
         <div>
