@@ -20,8 +20,8 @@ const Certificates = ({ blok }: any) => {
   }, [defaultLimit]);
 
   useEffect(() => {
-    setIsLoadMore(certLength >= limit);
-  }, [limit, certLength]);
+    setIsLoadMore(blok.certificate.length >= limit);
+  }, [limit, blok.certificate.length]);
 
   useEffect(() => {
     const currentCerts = blok.certificate.filter((_: any, index: number) => index <= limit);
