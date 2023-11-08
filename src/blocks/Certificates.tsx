@@ -20,7 +20,7 @@ const Certificates = ({ blok }: any) => {
   }, [defaultLimit]);
 
   useEffect(() => {
-    setIsLoadMore(limit !== certLength);
+    setIsLoadMore(limit >= certLength);
   }, [limit, certLength]);
 
   useEffect(() => {
