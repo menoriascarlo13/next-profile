@@ -42,7 +42,11 @@ const Certificates = ({ blok }: any) => {
         )}
       </div>
       {isLoadMore && (
-        <Button className='button tertiary my-0 mx-auto mt-10' label='Load More' onClick={loadMoreHandler} />
+        <Button
+          className='button tertiary my-0 mx-auto mt-10'
+          label={`${limit}/${certLength} Load More`}
+          onClick={loadMoreHandler}
+        />
       )}
     </section>
   );
