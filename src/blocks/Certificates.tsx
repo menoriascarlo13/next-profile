@@ -13,7 +13,7 @@ const Certificates = ({ blok }: any) => {
   const [limit, setLimit] = useState<number>(defaultLimit);
   const [isLoadMore, setIsLoadMore] = useState(defaultLimit !== certLength);
   const [certificates, setCertificates] = useState(blok.certificate);
-  const loadMoreHandler = () => setLimit((prev) => prev + defaultLimit);
+  const loadMoreHandler = () => setLimit((prev) => prev + (defaultLimit + 1));
 
   useEffect(() => {
     setLimit(defaultLimit);
@@ -33,8 +33,8 @@ const Certificates = ({ blok }: any) => {
       <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[16px]'>
         {certificates.map(({ _uid, description, image, logo, title, url }: any) =>
           url ? (
-            <Link className='h-full' href={url.cached_url} target='_blank'>
-              <Card key={_uid} className='h-full' description={description} image={image} logo={logo} title={title} />
+            <Link key={_uid} className='h-full' href={url.cached_url} target='_blank'>
+              <Card className='h-full' description={description} image={image} logo={logo} title={title} />
             </Link>
           ) : (
             <Card key={_uid} className='h-full' description={description} image={image} logo={logo} title={title} />
