@@ -9,11 +9,11 @@ import useDesktop from '@/hooks/useDesktop';
 const Certificates = ({ blok }: any) => {
   const isDesktop = useDesktop();
   const certLength = blok.certificate.length - 1;
-  const defaultLimit = isDesktop ? 4 : 2;
+  const defaultLimit = isDesktop ? 3 : 2;
   const [limit, setLimit] = useState<number>(defaultLimit);
   const [isLoadMore, setIsLoadMore] = useState(defaultLimit !== certLength);
   const [certificates, setCertificates] = useState(blok.certificate);
-  const loadMoreHandler = () => setLimit((prev) => prev + 1);
+  const loadMoreHandler = () => setLimit((prev) => prev + defaultLimit);
 
   useEffect(() => {
     setLimit(defaultLimit);
