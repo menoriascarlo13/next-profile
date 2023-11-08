@@ -44,7 +44,7 @@ const Certificates = ({ blok }: any) => {
       {isLoadMore && (
         <Button
           className='button tertiary my-0 mx-auto mt-10'
-          label={`${limit + 1}/${certLength} Certificates`}
+          label={`${limit + 1}/${blok.certificate.length} Certificates`}
           onClick={loadMoreHandler}
         />
       )}
