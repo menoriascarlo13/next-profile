@@ -8,25 +8,24 @@ import useDesktop from '@/hooks/useDesktop';
 
 const Certificates = ({ blok }: any) => {
   const isDesktop = useDesktop();
-  const certLength = blok.certificate.length - 1;
-  const defaultLimit = isDesktop ? 3 : 2;
-  const [limit, setLimit] = useState<number>(defaultLimit);
-  const [isLoadMore, setIsLoadMore] = useState(defaultLimit !== certLength);
+  const increment = isDesktop ? 4 : 2;
+  const [limit, setLimit] = useState<number>(0);
+  const [isLoadMore, setIsLoadMore] = useState(blok.certificate.length > limit);
   const [certificates, setCertificates] = useState(blok.certificate);
-  const loadMoreHandler = () => setLimit((prev) => prev + (defaultLimit + 1));
 
   useEffect(() => {
-    setLimit(defaultLimit);
-  }, [defaultLimit]);
+    setLimit(isDesktop ? 4 : 2);
+  }, [isDesktop]);
 
   useEffect(() => {
-    setIsLoadMore(blok.certificate.length >= limit);
-  }, [limit, blok.certificate.length]);
-
-  useEffect(() => {
-    const currentCerts = blok.certificate.filter((_: any, index: number) => index <= limit);
+    const currentCerts = blok.certificate.filter((_: any, index: number) => index < limit);
     setCertificates(currentCerts);
-  }, [blok.certificate, limit]);
+    setIsLoadMore(blok.certificate.length >= limit);
+  }, [limit, blok.certificate]);
+
+  const loadMoreHandler = () => {
+    setLimit((prev) => prev + increment);
+  };
 
   return (
     <section {...storyblokEditable(blok)} className='px-5 lg:px-20 mt-10'>
@@ -44,7 +43,7 @@ const Certificates = ({ blok }: any) => {
       {isLoadMore && (
         <Button
           className='button tertiary my-0 mx-auto mt-10'
-          label={`${limit + 1}/${blok.certificate.length} Certificates`}
+          label={`${limit}/${blok.certificate.length} Certificates`}
           onClick={loadMoreHandler}
         />
       )}

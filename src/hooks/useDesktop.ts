@@ -1,25 +1,26 @@
 import { useEffect, useState } from 'react';
 
 const useDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState(Boolean);
+  const [isDesktop, setIsDesktop] = useState<Boolean>(false);
 
   const calculateIsDesktop = () => {
+    console.log('window?.matchMedia', window?.matchMedia);
     if (window?.matchMedia) {
+      console.log('test', window);
       setIsDesktop(window.matchMedia('(any-hover: hover) and (min-width: 1024px)').matches);
+      console.log(window.matchMedia('(any-hover: hover) and (min-width: 1024px)').matches);
+    } else {
+      setIsDesktop(false);
     }
-
-    return false;
   };
 
   useEffect(() => {
-    calculateIsDesktop();
-
+    console.log(window);
     if (typeof window !== 'undefined') {
-      window.addEventListener('resize', calculateIsDesktop);
-      setIsDesktop(calculateIsDesktop);
-
+      window.addEventListener('load', calculateIsDesktop);
+      console.log('!undefined', window);
       return () => {
-        window.addEventListener('resize', calculateIsDesktop);
+        window.removeEventListener('load', calculateIsDesktop);
       };
     }
 
