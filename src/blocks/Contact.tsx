@@ -17,7 +17,7 @@ const Contact = ({ blok }: any) => {
           {blok.description && <p className='font-medium text-sm opacity-60 lg:max-w-[419px]'>{blok.description}</p>}
         </div>
         <div className='lg:col-span-5 gap-[32px] flex flex-col justify-center items-center lg:justify-start lg:items-start'>
-          <div className='flex gap-[26px]'>
+          <div className='flex gap-[10px]'>
             {blok.socials.map(({ _uid, icon: { filename }, url }: any) => (
               <Link
                 key={_uid}
