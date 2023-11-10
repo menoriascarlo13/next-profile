@@ -1,6 +1,6 @@
 import { storyblokEditable } from '@storyblok/react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Button from '@/components/Button/Button';
 import Card from '@/components/Card/Card';
@@ -8,10 +8,12 @@ import useDesktop from '@/hooks/useDesktop';
 
 const Certificates = ({ blok }: any) => {
   const isDesktop = useDesktop();
+  const certCardRef = useRef<Array<HTMLAnchorElement | HTMLDivElement | null>>([]);
+
   const increment = isDesktop ? 4 : 2;
   const [limit, setLimit] = useState<number>(0);
   const [isLoadMore, setIsLoadMore] = useState(blok.certificate.length > limit);
-  const [certificates, setCertificates] = useState(blok.certificate);
+  const [certificates, setCertificates] = useState([]);
 
   useEffect(() => {
     setLimit(isDesktop ? 4 : 2);
@@ -19,6 +21,7 @@ const Certificates = ({ blok }: any) => {
 
   useEffect(() => {
     const currentCerts = blok.certificate.filter((_: any, index: number) => index < limit);
+    certCardRef.current = certCardRef.current?.slice(0, blok.certificate.length);
     setCertificates(currentCerts);
     setIsLoadMore(blok.certificate.length >= limit);
   }, [limit, blok.certificate]);

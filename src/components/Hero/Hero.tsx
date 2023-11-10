@@ -1,15 +1,41 @@
 import { storyblokEditable } from '@storyblok/react';
 import clsx from 'clsx';
+import { useEffect, useRef, useState } from 'react';
 
+import useIsElementVisible from '@/hooks/useIsElementVisible';
 import { HeroPropType } from '@/types/Hero';
 
 import Image from '../Image/Image';
 import styles from './Hero.module.css';
 
 const Hero = ({ blok, className }: HeroPropType) => {
+  const ref = useRef(null);
+
+  const { isVisible } = useIsElementVisible({
+    ref
+  });
+
+  const [isShowCard, setIsShowCard] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      setIsShowCard(isVisible);
+    }
+  }, [isVisible]);
+
   return (
     <div
-      className={clsx(styles.Hero, className, `min-h-screen flex justify-center items-center md:items-start p-10`)}
+      ref={ref}
+      className={clsx(
+        styles.Hero,
+        className,
+        `min-h-screen flex justify-center items-center md:items-start p-10`,
+        'duration-1000',
+        {
+          'opacity-0': !isShowCard,
+          'opacity-1': isShowCard
+        }
+      )}
       {...storyblokEditable(blok)}
       style={{
         background: ` url('${blok?.background_image?.filename}') no-repeat center / cover`

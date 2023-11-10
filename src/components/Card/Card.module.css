@@ -1,5 +1,5 @@
 .Card {
-  @apply relative bg-[#828192]/[0.2] text-black p-4 rounded-lg transition md:hover:bg-[#828192]/[0.3];
+  @apply relative bg-[#828192]/[0.2] text-black p-4 rounded-lg md:hover:bg-[#828192]/[0.3];
 }
 
 .Card img {
